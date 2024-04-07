@@ -11,6 +11,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-point:before {
+  content: "\e7a5";
+}
+
 .icon-down_arrow:before {
   content: "\e65e";
 }

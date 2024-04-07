@@ -15,6 +15,8 @@
     --home-info-font-size: 12px;
     //主页头像宽高
     --home-authorImg-length : 150px;
+    //技能信息字体大小
+    --skill-info-font-size : 12px;
 }
 @media (max-width: 1366px){
     :root {
@@ -22,6 +24,8 @@
         --home-name-font-size: 0.8rem;
         //主页信息字体大小
         --home-info-font-size: 0.5rem;
+        //技能信息字体大小
+        --skill-info-font-size : 0.42rem;
     }
 }
 @media (max-width: 996px) {
@@ -38,5 +42,7 @@
         --home-info-font-size: 0.4rem;
         //主页头像宽高
         --home-authorImg-length : 80px;
+        //技能信息字体大小
+        --skill-info-font-size : 0.4rem;
     }
 }
