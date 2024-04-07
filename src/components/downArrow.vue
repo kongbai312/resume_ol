@@ -21,10 +21,10 @@ let { id } = defineProps<{
     left: 50%;
     cursor: pointer;
     animation: arrowAnimation 1s ease-in-out 0s alternate-reverse infinite;
-
     .iconfont {
         font-weight: 700;
         color: rgba(255, 255, 255, .5);
+        font-size: 12px;
     }
 }
 </style>

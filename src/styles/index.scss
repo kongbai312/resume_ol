@@ -17,6 +17,14 @@
     --home-authorImg-length : 150px;
     //技能信息字体大小
     --skill-info-font-size : 12px;
+    //工作经历时间字体大小
+    --work-info-time-font-size : 8px;
+    //工作经历公司字体大小
+    --work-info-position-font-size : 10px;
+    //工作经历部门字体大小
+    --work-info-department-font-size : 10px;
+    //工作经历工作字体大小
+    --work-info-work-font-size : 8px;
 }
 @media (max-width: 1366px){
     :root {
@@ -26,6 +34,14 @@
         --home-info-font-size: 0.5rem;
         //技能信息字体大小
         --skill-info-font-size : 0.42rem;
+        //工作经历时间字体大小
+        --work-info-time-font-size : 0.32rem;
+        //工作经历公司字体大小
+        --work-info-position-font-size : 0.38rem;
+        //工作经历部门字体大小
+        --work-info-department-font-size : 0.38rem;
+        //工作经历时间字体大小
+        --work-info-work-font-size : 0.32rem;
     }
 }
 @media (max-width: 996px) {

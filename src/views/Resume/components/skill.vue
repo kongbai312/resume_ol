@@ -5,6 +5,7 @@
             <div class="narbarBg skillBg"></div>
         </div>
         <div class="content">
+            <!-- 专业技能信息 -->
             <div class="skillInfoBox">
                 <span class="skillInfoItem"><i class="iconfont icon-point"></i>熟练使用 Vue2.0 、Vue-Router、Vuex、Vue-axios，熟练掌握SPA程序开发。</span>
                 <span class="skillInfoItem"><i class="iconfont icon-point"></i>熟练使用 Vue3.0，TypeScript、Pinia 等前端技术，并有相关的项目经验。</span>
@@ -17,6 +18,8 @@
             </div>
             <div class="contentBg"></div>
         </div>
+        <!-- 箭头 --><!-- 传入当前导航的下一个id -->
+        <DownArrow :id="2"></DownArrow>
     </section>
 </template>
 
@@ -34,7 +37,7 @@ const skillAnimation = () => {
             // pin: true,
             start: 'top bottom', //动画的开始位置
             end: '80% 80%', // 动画的结束位置
-            scrub: 1,
+            scrub: 1,//设置滚动时动画的平滑度。值为 1 表示滚动时动画会平滑地跟随滚动
             // markers: true, //显示滚动触发点的标记 用于调试
             /*
                 设置触发动画时的行为。
