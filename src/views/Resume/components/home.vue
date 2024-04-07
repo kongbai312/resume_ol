@@ -3,12 +3,18 @@
         <!-- 导航区 -->
         <Narbar></Narbar>
         <div class="content">
-            <div class="authorBox">
+            <div class="authorImgBox">
                 <div class="moonImg authorItem"></div>
                 <div class="authorImg authorItem"></div>
                 <div class="authorBg authorItem"></div>
             </div>
+            <div class="authorInfo">
+                <span class="name">朱博艺</span>
+                <span class="info">两年前端 - 本科</span>
+            </div>
         </div>
+        <!-- 箭头 --><!-- 传入当前导航的下一个id -->
+        <DownArrow :id="1"></DownArrow>
     </section>
 </template>
 
@@ -23,13 +29,15 @@ const authorImgAnimation = () => {
     tl.to(".moonImg", { x: 0, y: 10, opacity: 1 })
     tl.to(".moonImg", { x: 0, y: -5, opacity: 1 })
     tl.to(".moonImg", { x: 0, y: 0, opacity: 1 })
-    tl.to(".authorBox", { opacity: 1, rotationY: 180, scale: 2, duration: 1 })
+    tl.to(".authorImgBox", { opacity: 1, rotationY: 180, scale: 2, duration: 1 })
     tl.to(".authorImg", { opacity: 1, duration: 0.5 }, "-=0.5")
     tl.add(() => {
         let nestedTl = gsap.timeline({ duration: 1.5, repeat: -1 });
         nestedTl.to(".authorBg", { duration: 0.5, opacity: 1 });
         nestedTl.to(".authorBg", { opacity: 0, scale: 1.2, duration: 2 })
     })
+    tl.to(".authorInfo .name", { opacity: 1 , duration: 1})
+    tl.to(".authorInfo .info", { opacity: 1 , duration: 1})
 }
 onMounted(() => {
     authorImgAnimation()
@@ -55,18 +63,18 @@ onMounted(() => {
     // 内容
     .content {
         @include content;
-
-        .authorBox {
+        flex-direction: column;
+        .authorImgBox {
             position: relative;
-            width: 150px;
-            height: 150px;
+            width: var(--home-authorImg-length);
+            height: var(--home-authorImg-length);
 
             .authorItem {
                 position: absolute;
                 top: 0;
                 left: 0;
-                width: 150px;
-                height: 150px;
+                width: var(--home-authorImg-length);
+                height: var(--home-authorImg-length);
                 border-radius: 50%;
             }
 
@@ -93,7 +101,40 @@ onMounted(() => {
                 z-index: -1;
             }
         }
+        .authorInfo{
+            margin-top: 120px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #fff;
+            span{
+                box-sizing: border-box;
+                padding: 10px 0;
+                opacity: 0;
+            }
+            .name{
+                font-size: var(--home-name-font-size);
+            }
+            .info{
+                font-size: var(--home-info-font-size);
+                margin-top: 10px;
+                color: rgba(255,255,255,0.8);
+            }
+        }
     }
 
+}
+
+@media (max-width: 800px) {
+    .boxItem{
+        .content{
+            .authorInfo{
+                margin-top: 60px;
+                .info{
+                    margin-top: 5px;
+                }
+            }
+        }
+    }
 }
 </style>

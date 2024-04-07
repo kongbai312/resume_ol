@@ -9,6 +9,20 @@
     --narHeight :70px;
     //头部导航圆角
     --narBordRadius: 30px 0 0 0;
+    //主页名字字体大小
+    --home-name-font-size: 18px;
+    //主页信息字体大小
+    --home-info-font-size: 12px;
+    //主页头像宽高
+    --home-authorImg-length : 150px;
+}
+@media (max-width: 1366px){
+    :root {
+        //主页名字字体大小
+        --home-name-font-size: 0.8rem;
+        //主页信息字体大小
+        --home-info-font-size: 0.5rem;
+    }
 }
 @media (max-width: 996px) {
     :root {
@@ -18,5 +32,11 @@
         --narHeight :60px;
         //头部导航圆角
         --narBordRadius: 15px 0 0 0;
+        //主页名字字体大小
+        --home-name-font-size: 0.6rem;
+        //主页信息字体大小
+        --home-info-font-size: 0.4rem;
+        //主页头像宽高
+        --home-authorImg-length : 80px;
     }
 }

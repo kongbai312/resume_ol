@@ -1,12 +1,12 @@
 <template>
     <section class="boxItem about">
-      <div class="title title-about">
-        <span class="narbarItem" @click="goNarbar(4)"><i class="iconfont icon-about"></i>关于</span>
-        <div class="narbarBg aboutBg"></div>
-      </div>
-      <div class="content">
-        <div class="contentBg lastBg"></div>
-      </div>
+        <div class="title title-about">
+            <span class="narbarItem" @click="goNarbar(4)"><i class="iconfont icon-about"></i>关于</span>
+            <div class="narbarBg aboutBg"></div>
+        </div>
+        <div class="content">
+            <div class="contentBg lastBg"></div>
+        </div>
     </section>
 </template>
 
@@ -22,7 +22,7 @@ const { goNarbar } = useNarbarClick()
 //关于背景图
 .about {
     --bg-img: url(../../../assets/image/bg-about.jpg);
-  }
+}
 
 .boxItem {
     @include boxItem;
@@ -49,8 +49,8 @@ const { goNarbar } = useNarbarClick()
     }
 
     .title-about {
-      margin-left: calc(var(--narWidth) * 4); //4倍单个导航宽度
-      width: calc(100% - var(--narWidth) * 4);
+        margin-left: calc(var(--narWidth) * 4); //4倍单个导航宽度
+        width: calc(100% - var(--narWidth) * 4);
     }
 
     // 内容
@@ -61,9 +61,11 @@ const { goNarbar } = useNarbarClick()
         .contentBg {
             @include contentBg;
         }
+
         //最后一个背景
-        .lastBg{
+        .lastBg {
             height: calc(100vh - var(--narHeight));
+
             &::after {
                 height: 100vh;
             }
