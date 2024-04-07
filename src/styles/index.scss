@@ -1,0 +1,22 @@
+// 取消滚动条
+::-webkit-scrollbar {
+    display: none;
+}
+:root {
+    // 单个导航宽度
+    --narWidth: 210px; 
+    // 单个导航高度
+    --narHeight :70px;
+    //头部导航圆角
+    --narBordRadius: 30px 0 0 0;
+}
+@media (max-width: 996px) {
+    :root {
+        // 单个导航宽度
+        --narWidth: 20vw; 
+        // 单个导航高度
+        --narHeight :60px;
+        //头部导航圆角
+        --narBordRadius: 15px 0 0 0;
+    }
+}

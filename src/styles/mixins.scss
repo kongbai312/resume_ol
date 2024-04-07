@@ -1,0 +1,76 @@
+@mixin bg-img-after{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    &::after{
+        content: "";
+        z-index: -1;
+        background: linear-gradient(to right, rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), var(--bg-img);
+        background-size: cover;
+        height: 100vh;
+        width: 100%;
+        position: absolute;
+    }
+}
+
+@mixin flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+//Resume布局相关
+//单个section样式
+@mixin boxItem{
+    position: sticky;
+    top: var(--narHeight);
+    margin-top: var(--narHeight);
+    width: 100%;
+    height: calc(100vh - var(--narHeight));
+    display: flex;
+    flex-direction: column;
+}
+//section中标题样式
+@mixin title{
+    position: absolute;
+    margin-top: calc(-1 * var(--narHeight));
+    color: #fff;
+    height: var(--narHeight);
+    border-radius: var(--narBordRadius);
+    overflow: hidden;
+}
+//导航条单个样式
+@mixin narbarItem{
+    height: 100%;
+    width: var(--narWidth);
+    @include flex-center;
+    font-size: 6px;
+    cursor: pointer;
+    .iconfont {
+        margin-right: 5px;
+        font-size: 6px;
+    }
+}
+//section导航公共背景
+@mixin narbarBg{
+    margin-top: calc(-1 * var(--narHeight));
+    pointer-events: none;
+    @include bg-img-after;
+}
+//section中内容样式
+@mixin content{
+    position: relative;
+    height: calc(100vh - var(--narHeight));
+    @include flex-center;
+}
+//section中内容背景样式
+@mixin contentBg{
+    overflow: hidden;
+    @include bg-img-after;
+    height: 100vh;
+    top: 0;
+    z-index: -1;
+    &::after {
+        margin-top: calc(-1 * var(--narHeight)) !important;
+    }
+}
