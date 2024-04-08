@@ -8,7 +8,7 @@
 </template>
 
 <script setup lang='ts'>
-import NarbarArr from '@/config/narbar.config'
+import NarbarArr from '@/config/narbar.config';
 import { useNarbarClick } from '@/hooks/narbarClick';
 //导航跳转
 const { goNarbar } = useNarbarClick()

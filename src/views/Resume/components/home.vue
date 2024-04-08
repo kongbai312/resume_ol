@@ -9,17 +9,19 @@
                 <div class="authorBg authorItem"></div>
             </div>
             <div class="authorInfo">
-                <span class="name">朱博艺</span>
-                <span class="info">两年前端 - 本科</span>
+                <span class="name">{{ ResumeConfig.name }}</span>
+                <span class="info">{{ ResumeConfig.workName }} - {{ ResumeConfig.degree}}</span>
             </div>
         </div>
         <!-- 箭头 --><!-- 传入当前导航的下一个id -->
-        <DownArrow :id="1"></DownArrow>
+        <DownArrow :id="(NarbarArr[0].id + 1)"></DownArrow>
     </section>
 </template>
 
 <script setup lang='ts'>
+import ResumeConfig from '@/config/resume.config';
 import gsap from '@/utils/gsap';
+import NarbarArr from '@/config/narbar.config';
 //头像动画
 let tl = gsap.timeline({ duration: 3, ease: 'power2.inOut' })
 const authorImgAnimation = () => {

@@ -1,31 +1,30 @@
 <template>
     <section class="boxItem skill">
         <div class="title title-skill">
-            <span class="narbarItem" @click="goNarbar(1)"><i class="iconfont icon-skill"></i>专业技能</span>
+            <span class="narbarItem" @click="goNarbar(NarbarArr[1].id)">
+                <i :class="`iconfont icon-${ NarbarArr[1].icon}`"></i>{{NarbarArr[1].name}}
+            </span>
             <div class="narbarBg skillBg"></div>
         </div>
         <div class="content">
             <!-- 专业技能信息 -->
             <div class="skillInfoBox">
-                <span class="skillInfoItem"><i class="iconfont icon-point"></i>熟练使用 Vue2.0 、Vue-Router、Vuex、Vue-axios，熟练掌握SPA程序开发。</span>
-                <span class="skillInfoItem"><i class="iconfont icon-point"></i>熟练使用 Vue3.0，TypeScript、Pinia 等前端技术，并有相关的项目经验。</span>
-                <span class="skillInfoItem"><i class="iconfont icon-point"></i>熟练使用 Element-ui、Vant、Bootstrap 等 UI 框架。</span>
-                <span class="skillInfoItem"><i class="iconfont icon-point"></i>熟练使用HTML5、CSS3、JavaScript进行快速独立完成PC端和移动端页面架构和响应式布局。</span>
-                <span class="skillInfoItem"><i class="iconfont icon-point"></i>熟练使用Less、Sass等CSS预处理语言，提升代码灵活性与开发效率。</span>
-                <span class="skillInfoItem"><i class="iconfont icon-point"></i>熟练使用uni-app框架进行小程序开发。</span>
-                <span class="skillInfoItem"><i class="iconfont icon-point"></i>了解Node.js 。</span>
-                <span class="skillInfoItem"><i class="iconfont icon-point"></i>了解使用 Echarts 图表，高德地图，能够阅读文档进行配置。</span>
+                <span class="skillInfoItem" v-for="skill in ResumeConfig.skills">
+                    <i class="iconfont icon-point"></i>{{ skill }}
+                </span>
             </div>
             <div class="contentBg"></div>
         </div>
         <!-- 箭头 --><!-- 传入当前导航的下一个id -->
-        <DownArrow :id="2"></DownArrow>
+        <DownArrow :id="(NarbarArr[1].id + 1)"></DownArrow>
     </section>
 </template>
 
 <script setup lang='ts'>
 import { useNarbarClick } from '@/hooks/narbarClick';
 import gsap from '@/utils/gsap';
+import ResumeConfig from '@/config/resume.config';
+import NarbarArr from '@/config/narbar.config';
 //导航跳转
 const { goNarbar } = useNarbarClick()
 

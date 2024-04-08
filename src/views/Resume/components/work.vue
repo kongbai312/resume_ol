@@ -1,38 +1,44 @@
 <template>
     <section class="boxItem work">
         <div class="title title-work">
-            <span class="narbarItem" @click="goNarbar(2)"><i class="iconfont icon-work"></i>工作经历</span>
+            <span class="narbarItem" @click="goNarbar(NarbarArr[2].id)">
+                <i :class="`iconfont icon-${ NarbarArr[2].icon}`"></i>{{NarbarArr[2].name}}
+            </span>
             <div class="narbarBg workBg"></div>
         </div>
         <div class="content">
             <!-- 工作经历信息 -->
             <div class="workInfoBox">
-                <div class="workInfoItem" v-for="item in 5" :key="item">
+                <div class="workInfoItem" v-for="(work , index) in ResumeConfig.works" :key="index">
                     <div class="itemLeft infoItem">
-                        <div class="time">2021/12/12 - 2024/12/12</div>
+                        <div class="time">{{work.workTime}}</div>
                         <div class="companyImgBox">
-                            <img class="companyImg" src="../../../assets/image/author.png" alt="">
+                            <img v-if="work.companyImg !== ''" class="companyImg" :src="work.companyImg" alt="">
+                            <!-- 没有图片会显示公司的第一个字 -->
+                            <div v-else class="companyImg companyFont">{{ work.company.substring(0,1) }}</div>
                         </div>
-                        <div class="position">安能贸易有限公司</div>
+                        <div class="position">{{ work.company }}</div>
                     </div>
                     <div class="itemRight infoItem">
-                        <div class="department">magento建站部</div>
-                        <div class="workBox">
-                            <span class="workItem">1. 参与公司产品规划构思及需求分析，对涉及的产品主题、用户交互等相关问题提出建议。</span>
-                            <span class="workItem">2. 根据效果图，熟练运用相关制作工具独立完成页面制作。</span>
-                            <span class="workItem">3. 优化页面，缩减页面体积、加快页面元素的加载速度、优化用户体验。</span>
+                        <div class="department">{{ work.department }}</div>
+                        <div class="workBox" v-for="(item,index) in work.worksBox" :key="index">
+                            <span class="workItem">{{ item }}</span>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="contentBg"></div>
         </div>
+        <!-- 箭头 --><!-- 传入当前导航的下一个id -->
+        <DownArrow :id="(NarbarArr[2].id + 1)"></DownArrow>
     </section>
 </template>
 
 <script setup lang='ts'>
 import { useNarbarClick } from '@/hooks/narbarClick';
 import gsap from '@/utils/gsap';
+import ResumeConfig from '@/config/resume.config';
+import NarbarArr from '@/config/narbar.config';
 //导航跳转
 const { goNarbar } = useNarbarClick()
 
@@ -50,7 +56,7 @@ const workAnimation = () => {
             toggleActions: 'play none reverse none' 
         } as any
         // 添加内层容器属性的条件 第二个
-        let workItemNum = (window.innerWidth < 1366) ? 2 : 3
+        let workItemNum = (window.innerWidth <= 1366) ? 2 : 3
         if (index >= workItemNum) {
             triggerOptions.scroller = '.workInfoBox'; // 指定内层滚动容器
             triggerOptions.end = '40% 90%'
@@ -58,7 +64,7 @@ const workAnimation = () => {
         let t1 = gsap.timeline({
             scrollTrigger: triggerOptions
         })
-        t1.addLabel('spin')
+        t1.addLabel('spin')//元素开始时候的标签
         t1.from(workItem.querySelector('.itemLeft'),{
                 x: '-20%',
                 opacity: 0
@@ -134,6 +140,10 @@ onMounted(() => {
                 display: flex;
                 border-radius: 15px;
                 margin-top: 15px;
+                transition: all .3s ease-out;
+                &:hover{
+                    transform: scale(1.02, 1.02) !important;
+                }
                 // 公共样式
                 .infoItem{
                     box-sizing: border-box;
@@ -161,6 +171,12 @@ onMounted(() => {
                             height: 100%;
                             width: 100%;
                             border-radius: 50%;
+                            object-fit: cover;
+                        }
+                        .companyFont{
+                            @include flex-center;
+                            font-size: 10px;
+                            background-color: rgba(0,255,255,0.5);
                         }
                     }
                     .position{
