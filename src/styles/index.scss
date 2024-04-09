@@ -25,6 +25,20 @@
     --work-info-department-font-size : 10px;
     //工作经历工作字体大小
     --work-info-work-font-size : 8px;
+    //项目卡片标题字体大小
+    --project-title-font-size : 16px;
+    //项目卡片简介字体大小
+    --project-profile-font-size : 14px;
+    //项目中卡片的PC样式
+    --projectInfoItem-width: 60vw;
+    --infoItemBox-width: 1000px;
+    --infoItemBox-height: 600px;
+    --infoItemBox-border-radius: 20px;
+    --infoItemContent-padding: 20px 60px;
+    --infoItemContent_title-height: 200px;
+    --infoItemContent_title_text-padding: 5px 20px;
+    //项目中横向滚动的高度
+    --sticky-wrapper-height:108.333333vw;
 }
 @media (max-width: 1366px){
     :root {
@@ -42,6 +56,10 @@
         --work-info-department-font-size : 0.38rem;
         //工作经历时间字体大小
         --work-info-work-font-size : 0.32rem;
+        //项目卡片标题字体大小
+        --project-title-font-size : 0.5rem;
+        //项目卡片简介字体大小
+        --project-profile-font-size : 0.48rem;
     }
 }
 @media (max-width: 996px) {
@@ -60,5 +78,23 @@
         --home-authorImg-length : 80px;
         //技能信息字体大小
         --skill-info-font-size : 0.4rem;
+        //项目卡片标题字体大小
+        --project-title-font-size : 0.6rem;
+    }
+}
+
+//手机屏幕
+@media (max-width: 500px){
+    :root{
+        //项目中卡片的手机样式
+        --projectInfoItem-width: 90vw;
+        --infoItemBox-width: 90vw;
+        --infoItemBox-height: 300px;
+        --infoItemBox-border-radius: 10px;
+        --infoItemContent-padding: 20px 30px;
+        --infoItemContent_title-height: 100px;
+        --infoItemContent_title_text-padding: 5px 15px;
+        //项目中横向滚动的高度
+        --sticky-wrapper-height:108.333333vh;
     }
 }

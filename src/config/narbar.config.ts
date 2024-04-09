@@ -21,7 +21,7 @@ export default [
     // 项目成果
     {   
         id: 3,
-        name : '项目成果',
+        name : '项目',
         icon : 'project'
     },
     // 关于
