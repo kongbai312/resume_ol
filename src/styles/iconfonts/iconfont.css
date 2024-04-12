@@ -11,6 +11,22 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-wechat:before {
+  content: "\e600";
+}
+
+.icon-qq:before {
+  content: "\e882";
+}
+
+.icon-email:before {
+  content: "\e66f";
+}
+
+.icon-phone:before {
+  content: "\e817";
+}
+
 .icon-point:before {
   content: "\e7a5";
 }

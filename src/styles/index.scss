@@ -39,6 +39,14 @@
     --infoItemContent_title_text-padding: 5px 20px;
     //项目中横向滚动的高度
     --sticky-wrapper-height:108.333333vw;
+    //about中标题字体大小
+    --about-title-font-size: 20px;
+    //about中提示字体大小
+    --about-prompt-font-size: 10px;
+    //about中按钮字体大小
+    --about-buttom-font-size: 8px;
+    //about中按钮图标字体大小
+    --about-buttom-icon-font-size: 12px;
 }
 @media (max-width: 1366px){
     :root {
@@ -60,6 +68,14 @@
         --project-title-font-size : 0.5rem;
         //项目卡片简介字体大小
         --project-profile-font-size : 0.48rem;
+        //about中标题字体大小
+        --about-title-font-size: 0.7rem;
+        //about中提示字体大小
+        --about-prompt-font-size: 0.38rem;
+        //about中按钮字体大小
+        --about-buttom-font-size: 0.30rem;
+        //about中按钮图标字体大小
+        --about-buttom-icon-font-size: 0.42rem;
     }
 }
 @media (max-width: 996px) {
@@ -80,6 +96,8 @@
         --skill-info-font-size : 0.4rem;
         //项目卡片标题字体大小
         --project-title-font-size : 0.6rem;
+        //项目卡片简介字体大小
+        --project-profile-font-size : 0.42rem;
     }
 }
 

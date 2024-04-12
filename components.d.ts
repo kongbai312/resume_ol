@@ -13,5 +13,6 @@ declare module 'vue' {
     Narbar: typeof import('./src/components/narbar.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Star: typeof import('./src/components/star/star.vue')['default']
   }
 }

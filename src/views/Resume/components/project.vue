@@ -9,10 +9,10 @@
             <div class="projectInfoBox">
                 <div class="projectInfoItem firstProjectInfoItem">
                     <div class="infoItemBox">
-                        <img class="projectItemImg" src="../../../assets/image/blog.png" alt="">
+                        <img class="projectItemImg" :src="firstProject.img" alt="">
                         <div class="infoItemContent">
-                            <div class="infoItemContent_title"><span class="title_text">个人博客</span></div>
-                            <div class="infoItemContent_profile">用于记录学习与生活</div>
+                            <div class="infoItemContent_title"><span class="title_text">{{ firstProject.name }}</span></div>
+                            <div class="infoItemContent_profile">{{ firstProject.profile }}</div>
                         </div>
                     </div>
                 </div>
@@ -21,27 +21,15 @@
                     <div class="sticky-wrapper">
                         <div class="sticky-content">
                             <div class="section-wrapper">
-                                <div class="section-card">
-                                    <div class="section-card-content">
+                                <div class="section-card" v-for="(item ,index) in centerProject" :key="index">
+                                    <!-- 只有两个卡片时，添加模糊处理 -->
+                                    <div class="section-card-content" :class="{'fuzzy':index === 1 && centerProject.length === 2}">
                                         <div class="infoItemBox">
-                                            <img class="projectItemImg" src="../../../assets/image/blog.png" alt="">
+                                            <img class="projectItemImg" :src="item.img" alt="">
                                             <div class="infoItemContent">
-                                                <div class="infoItemContent_title"><span class="title_text">个人博客</span>
+                                                <div class="infoItemContent_title"><span class="title_text">{{item.name}}</span>
                                                 </div>
-                                                <div class="infoItemContent_profile">用于记录学习与生活</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="section-card">
-                                    <!-- fuzzy -->
-                                    <div class="section-card-content fuzzy">
-                                        <div class="infoItemBox">
-                                            <img class="projectItemImg" src="../../../assets/image/blog.png" alt="">
-                                            <div class="infoItemContent">
-                                                <div class="infoItemContent_title"><span class="title_text">个人博客</span>
-                                                </div>
-                                                <div class="infoItemContent_profile">用于记录学习与生活</div>
+                                                <div class="infoItemContent_profile">{{item.profile}}</div>
                                             </div>
                                         </div>
                                     </div>
@@ -52,10 +40,10 @@
                 </section>
                 <div class="projectInfoItem lastProjectInfoItem">
                     <div class="infoItemBox">
-                        <img class="projectItemImg" src="../../../assets/image/blog.png" alt="">
+                        <img class="projectItemImg" :src="lastProject.img" alt="">
                         <div class="infoItemContent">
-                            <div class="infoItemContent_title"><span class="title_text">个人博客</span></div>
-                            <div class="infoItemContent_profile">用于记录学习与生活</div>
+                            <div class="infoItemContent_title"><span class="title_text">{{ lastProject.name }}</span></div>
+                            <div class="infoItemContent_profile">{{ lastProject.profile }}</div>
                         </div>
                     </div>
                 </div>
@@ -68,6 +56,25 @@
 <script setup lang='ts'>
 import { useNarbarClick } from '@/hooks/narbarClick';
 import gsap from '@/utils/gsap';
+import ResumeConfig from '@/config/resume.config';
+
+//第一个项目数据
+let firstProject = computed(() => {
+    return ResumeConfig.projects[0]
+})
+//中间滚动数据
+let centerProject = computed(() => {
+    if(ResumeConfig.projects.length > 2){
+        return  ResumeConfig.projects.slice(1,-1)
+    }
+    else{
+        return []
+    }
+})
+//最后一个项目数据
+let lastProject = computed(() => {
+    return ResumeConfig.projects.slice(ResumeConfig.projects.length - 1)[0]
+})
 
 // 实现卡片横向滚动
 const cardViewFn = () => {
@@ -290,7 +297,6 @@ const { goNarbar } = useNarbarClick()
                     height: calc(100vh - var(--narHeight) - 40px);
                     background-color: transparent;
                     @include flex-center;
-
                     .infoItemBox {
                         @include projectCard;
                     }

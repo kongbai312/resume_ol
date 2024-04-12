@@ -1,4 +1,12 @@
-import Company1 from '@/assets/image/company1.jpg'
+import Company1 from '@/assets/image/company1.jpg';
+//个人博客图片
+import BlogImg from '@/assets/image/blog.png';
+//贸速达图片
+import MaosudaImg from '@/assets/image/maosuda.jpg';
+//修仙全靠运气图片
+import xiuxianImg from '@/assets/image/xiuxian.png';
+//大屏数据监控
+import bigScreenImg from '@/assets/image/bigscreen.png';
 
 export default {
     //自己的姓名
@@ -42,5 +50,28 @@ export default {
                 '3. 优化页面，缩减页面体积、加快页面元素的加载速度、优化用户体验。'
             ]
         }
-    ] 
+    ] ,
+    //项目经历
+    projects:[
+        {
+            name : '个人博客',
+            img : BlogImg,
+            profile : '用于记录学习与生活'
+        },
+        {
+            name : '贸速达',
+            img : MaosudaImg,
+            profile : '贸易订单的管理。为客户提供可视化运输状态。'
+        },
+        {
+            name : '修仙全靠运气(移动端)',
+            img : xiuxianImg,
+            profile : '玩家能够随时随地的参与游戏活动。'
+        },
+        {
+            name : '数据监管',
+            img : bigScreenImg,
+            profile : '用于销售数据监控'
+        },
+    ]
 }
