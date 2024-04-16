@@ -8,7 +8,7 @@
             <!-- 项目信息 -->
             <div class="projectInfoBox">
                 <div class="projectInfoItem firstProjectInfoItem">
-                    <div class="infoItemBox">
+                    <div class="infoItemBox" title="点击查看详情" @click="showProjectDetail(firstProject.id)">
                         <img class="projectItemImg" :src="firstProject.img" alt="">
                         <div class="infoItemContent">
                             <div class="infoItemContent_title"><span class="title_text">{{ firstProject.name }}</span></div>
@@ -21,7 +21,7 @@
                     <div class="sticky-wrapper">
                         <div class="sticky-content">
                             <div class="section-wrapper">
-                                <div class="section-card" v-for="(item ,index) in centerProject" :key="index">
+                                <div class="section-card" @click="showProjectDetail(item.id)" title="点击查看详情" v-for="(item ,index) in centerProject" :key="index">
                                     <!-- 只有两个卡片时，添加模糊处理 -->
                                     <div class="section-card-content" :class="{'fuzzy':index === 1 && centerProject.length === 2}">
                                         <div class="infoItemBox">
@@ -39,7 +39,7 @@
                     </div>
                 </section>
                 <div class="projectInfoItem lastProjectInfoItem">
-                    <div class="infoItemBox">
+                    <div class="infoItemBox" title="点击查看详情">
                         <img class="projectItemImg" :src="lastProject.img" alt="">
                         <div class="infoItemContent">
                             <div class="infoItemContent_title"><span class="title_text">{{ lastProject.name }}</span></div>
@@ -51,12 +51,32 @@
             <div class="contentBg"></div>
         </div>
     </section>
+    <Drawer :drawerShow="drawerShow" :projectDetail="currentProjectDetail" @close="closeDrawer"></Drawer>
 </template>
 
 <script setup lang='ts'>
 import { useNarbarClick } from '@/hooks/narbarClick';
 import gsap from '@/utils/gsap';
 import ResumeConfig from '@/config/resume.config';
+import type { ProjectDetailType } from '@/types/project.d.ts';
+//控制drawer显示隐藏
+let drawerShow = ref(false)
+
+//当前点击的项目详情
+let currentProjectDetail = ref<ProjectDetailType>()
+
+//关闭drawer
+const closeDrawer = () => {
+    drawerShow.value = false
+}
+
+//显示当前的项目详情
+const showProjectDetail = ( id : number) => {
+    //获取项目详情
+    currentProjectDetail.value = ResumeConfig.projects.find( item => item.id === id)!.detail
+    //显示drawer
+    drawerShow.value = true
+}
 
 //第一个项目数据
 let firstProject = computed(() => {
@@ -272,7 +292,7 @@ const { goNarbar } = useNarbarClick()
 
                 // 允许滚动的高度
                 .sticky-wrapper {
-                    height: var(--sticky-wrapper-height);
+                    height: var(--project-sticky-wrapper-height);
                 }
 
                 //粘性盒子容器，根据父级滚动容器定位

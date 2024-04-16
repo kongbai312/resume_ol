@@ -78,9 +78,9 @@
 //project 项目中单个卡片样式
 @mixin projectCard {
   position: relative;
-  width: var(--infoItemBox-width);
-  height: var(--infoItemBox-height);
-  border-radius: var(--infoItemBox-border-radius);
+  width: var(--project-infoItemBox-width);
+  height: var(--project-infoItemBox-height);
+  border-radius: var(--project-infoItemBox-border-radius);
   overflow: hidden;
 
   // 项目图片
@@ -100,7 +100,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    padding: var(--infoItemContent-padding);
+    padding: var(--project-infoItemContent-padding);
     cursor: pointer;
 
     // hover后，线出现
@@ -118,12 +118,12 @@
       box-sizing: border-box;
       position: relative;
       width: 100%;
-      height: var(--infoItemContent_title-height);
+      height: var(--project-infoItemContent_title-height);
       @include flex-center;
       overflow: hidden;
 
       .title_text {
-        padding: var(--infoItemContent_title_text-padding);
+        padding: var(--project-infoItemContent_title_text-padding);
         background: rgba(0, 0, 0, 0.3);
         border-radius: 20px;
         font-size: var(--project-title-font-size);

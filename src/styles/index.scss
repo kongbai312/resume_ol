@@ -31,14 +31,16 @@
     --project-profile-font-size : 14px;
     //项目中卡片的PC样式
     --projectInfoItem-width: 60vw;
-    --infoItemBox-width: 1000px;
-    --infoItemBox-height: 600px;
-    --infoItemBox-border-radius: 20px;
-    --infoItemContent-padding: 20px 60px;
-    --infoItemContent_title-height: 200px;
-    --infoItemContent_title_text-padding: 5px 20px;
+    --project-infoItemBox-width: 1000px;
+    --project-infoItemBox-height: 600px;
+    --project-infoItemBox-border-radius: 20px;
+    --project-infoItemContent-padding: 20px 60px;
+    --project-infoItemContent_title-height: 200px;
+    --project-infoItemContent_title_text-padding: 5px 20px;
     //项目中横向滚动的高度
-    --sticky-wrapper-height:108.333333vw;
+    --project-sticky-wrapper-height:108.333333vw;
+    //项目中详情字体
+    --project-detail-font-size : 10px;
     //about中标题字体大小
     --about-title-font-size: 20px;
     //about中提示字体大小
@@ -68,6 +70,8 @@
         --project-title-font-size : 0.5rem;
         //项目卡片简介字体大小
         --project-profile-font-size : 0.48rem;
+        //项目中详情字体
+        --project-detail-font-size : 0.38rem;
         //about中标题字体大小
         --about-title-font-size: 0.7rem;
         //about中提示字体大小
@@ -106,13 +110,13 @@
     :root{
         //项目中卡片的手机样式
         --projectInfoItem-width: 90vw;
-        --infoItemBox-width: 90vw;
-        --infoItemBox-height: 300px;
-        --infoItemBox-border-radius: 10px;
-        --infoItemContent-padding: 20px 30px;
-        --infoItemContent_title-height: 100px;
-        --infoItemContent_title_text-padding: 5px 15px;
+        --project-infoItemBox-width: 90vw;
+        --project-infoItemBox-height: 300px;
+        --project-infoItemBox-border-radius: 10px;
+        --project-infoItemContent-padding: 20px 30px;
+        --project-infoItemContent_title-height: 100px;
+        --project-infoItemContent_title_text-padding: 5px 15px;
         //项目中横向滚动的高度
-        --sticky-wrapper-height:108.333333vh;
+        --project-sticky-wrapper-height:108.333333vh;
     }
 }
