@@ -11,6 +11,7 @@
             <div class="authorInfo">
                 <span class="name">{{ ResumeConfig.name }}</span>
                 <span class="info">{{ ResumeConfig.workName }} - {{ ResumeConfig.degree}}</span>
+                <span class="info professional">信息与计算科学</span>
             </div>
         </div>
         <!-- 箭头 --><!-- 传入当前导航的下一个id -->
@@ -121,6 +122,9 @@ onMounted(() => {
                 font-size: var(--home-info-font-size);
                 margin-top: 10px;
                 color: rgba(255,255,255,0.8);
+            }
+            .professional{
+                font-size: var(--home-professional-font-size);
             }
         }
     }

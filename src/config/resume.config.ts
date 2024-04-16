@@ -29,10 +29,10 @@ export default {
     //工作经历
     works : [
         {
-            workTime : '2021/12/12 - 2024/12/12',
+            workTime : '2021/9/23 - 2023/11/30',
             companyImg : Company1,//没有图片会显示公司的第一个字
             company : '安能贸易有限公司',
-            department:'magento建站部',
+            department:'magic建站部',
             worksBox:[
                 '1. 参与公司产品规划构思及需求分析，对涉及的产品主题、用户交互等相关问题提出建议。',
                 '2. 根据效果图，熟练运用相关制作工具独立完成页面制作。',
