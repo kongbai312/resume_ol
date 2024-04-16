@@ -200,7 +200,6 @@ const buttonClick = (type: string) => {
 
 @media (max-width: 996px) {
     .boxItem {
-
         // 内容
         .content {
 
