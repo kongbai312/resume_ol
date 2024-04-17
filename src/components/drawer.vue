@@ -4,9 +4,18 @@
         <div ref="drawerBoxRef" class="drawerBox" v-if="Object.keys(projectDetail).length !== 0">
             <div class="technologyTitle" v-if="projectDetail.title !== ''">{{ projectDetail.title }}</div>
             <div 
+                class="technologyUrl technology"
+                @click="urlClick(projectDetail.url)" 
+                v-if="projectDetail.url !== ''"
+            >在线地址：{{ projectDetail.url }}</div>
+            <div 
                 class="technologyProfile technology" 
                 v-if="projectDetail.profile !== ''"
             >项目简介：{{ projectDetail.profile }}</div>
+            <div 
+                class="technologyResult technology" 
+                v-if="projectDetail.result !== ''"
+            >项目成果：{{ projectDetail.result }}</div>
             <div 
                 class="technologyStack technology" 
                 v-if="projectDetail.technologyStack !== ''"
@@ -46,6 +55,11 @@ const close = () => {
     document.body.style.overflow = 'auto';
 }
 
+//在线地址点击
+const urlClick = ( url : string) => {
+    window.open(url)
+}
+
 //drawerBox元素
 let drawerBoxRef = ref()
 
@@ -57,7 +71,6 @@ const open = () => {
     //获取所有的子元素
     Array.from(drawerBoxRef.value.children).forEach((item: any) => {
         heightAll += item.clientHeight
-        console.log(item.clientHeight)
     })
     heightProportion.value = heightAll / window.innerHeight
     //将body元素进行滚动锁定
@@ -90,7 +103,9 @@ let heightPercentage = computed(() => {
         font-size: var(--project-detail-font-size);
         padding: 10px 0;
     }
-
+    .technologyUrl{
+        cursor: pointer;
+    }
     .technologyItemBox {
         display: flex;
         flex-direction: column;
@@ -110,7 +125,9 @@ let heightPercentage = computed(() => {
         .technologyStack {
             word-break: break-all;
         }
-
+        .technologyUrl{
+            word-break: break-all;
+        }
         .technologyItemBox {
             .technologyItem {
                 padding: 5px 0;
