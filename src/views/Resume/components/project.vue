@@ -39,7 +39,7 @@
                     </div>
                 </section>
                 <div class="projectInfoItem lastProjectInfoItem">
-                    <div class="infoItemBox" title="点击查看详情">
+                    <div class="infoItemBox" title="点击查看详情"  @click="showProjectDetail(lastProject.id)" >
                         <img class="projectItemImg" :src="lastProject.img" alt="">
                         <div class="infoItemContent">
                             <div class="infoItemContent_title"><span class="title_text">{{ lastProject.name }}</span></div>

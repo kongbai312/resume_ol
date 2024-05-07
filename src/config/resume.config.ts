@@ -5,8 +5,8 @@ import BlogImg from '@/assets/image/blog.png';
 import MaosudaImg from '@/assets/image/maosuda.jpg';
 //修仙全靠运气图片
 import xiuxianImg from '@/assets/image/xiuxian.png';
-//大屏数据监控
-import bigScreenImg from '@/assets/image/bigscreen.png';
+//安心送
+import AnxinsongImg from '@/assets/image/anxinsong.png';
 
 export default {
     //自己的姓名
@@ -17,14 +17,13 @@ export default {
     degree : '本科',
     //个人技能
     skills : [
-        '熟练使用 Vue2.0 、Vue-Router、Vuex、Vue-axios，熟练掌握SPA程序开发。',
-        '熟练使用 Vue3.0，TypeScript、Pinia 等前端技术，并有相关的项目经验。',
-        '熟练使用 Element-ui、Vant、Bootstrap 等 UI 框架。',
-        '熟练使用HTML5、CSS3、JavaScript进行快速独立完成PC端和移动端页面架构和响应式布局。',
-        '熟练使用Less、Sass等CSS预处理语言，提升代码灵活性与开发效率。',
-        '熟练使用uni-app框架进行小程序开发。',
-        '了解Node.js 。',
-        '了解使用 Echarts 图表，高德地图，能够阅读文档进行配置。'
+        '熟练使用 Vue2 、Vue3、Vue-Router、Vuex、TypeScript，Pinia 等前端技术。并了解Vue实现原理',
+        '熟练使用 Element-UI、Vant、Bootstrap 等 UI 框架',
+        '熟练使用HTML5、CSS3、JavaScript进行快速独立完成PC端和移动端页面架构和响应式布局',
+        '熟练使用Less、Sass等CSS预处理语言，提升代码灵活性与开发效率',
+        '熟练使用Uni-app框架进行小程序开发',
+        '了解前端工程化开发，以及Webpack、Vite配置与性能优化',
+        '了解使用 Echarts，高德地图等工具进行可视化渲染',
     ],
     //工作经历
     works : [
@@ -74,22 +73,42 @@ export default {
             profile : '贸易订单的管理。为客户提供可视化运输状态。',
             detail:{
                 title:'贸速达',
-                profile: '通过该项目能够进行贸易订单的管理。每个客户都能在该系统上进行查询与咨询。并且与物流公司联合，利用物流运输信息数据为客户提供可视化运输状态。',
+                profile: '该项目能够进行贸易订单的管理。客户能在该系统上进行订单查询与咨询。并为客户提供可视化运输状态',
                 module : '个人中心，地址管理，物流查询，客服咨询',
                 result:'',
                 url : '',
-                technologyStack : 'Vue3+Vue-Router+Axios+Pinia+socket.io+TypeScript',
+                technologyStack : 'Vue3+Vue-Router+Axios+Pinia+Websocket+TypeScript',
                 technicalPoints :[
-                    '1. 填写表单数据时，意外关闭窗口，第二次填写能够进行数据回弹。',
-                    '2. 数据筛查，实现地址数据的多级联动。',
-                    '3. 基于高德地图提供的资源包，注册AMap实例，根据文档进行地图的绘制，实现物流可视化。',
-                    '4. 基于 websocket 技术和 socket.io-client 插件，建立链接，实现客户与客服即时聊天功能。',
-                    '5. 基于axios 封装全局请求方法，简化传参逻辑，以及业务失败处理。',
+                    '1. 开发一个高复用的消息组件，该组件利用虚拟DOM技术进行直接渲染，通过Vue的实例将显示消息的方法提供给后代组件。同时，对该组件进行全面的测试以确保其稳定性和可靠性。',
+                    '2. 基于高德地图提供的资源包，注册AMap实例，绘制物流订单路线图，实现物流可视化。',
+                    '3. 基于 WebSocket 技术和 socket.io-client 插件，实现客户与客服即时聊天。',
+                    '4. 基于axios 封装全局请求方法，简化传参逻辑，以及业务失败处理。',
+                    '5. 使用Pinia将表单数据存储本地，窗口意外关闭进行数据回弹。',
                 ]
             }
         },
         {
             id : 3,
+            name : '安心送',
+            img : AnxinsongImg,
+            profile : '为客户提供系下单与订单查询',
+            detail:{
+                title:'安心送',
+                profile: '该项目提供商品的送达服务。并为客户提供系下单与订单查询',
+                module : '登录页，服务优选，订单管理，个人中心',
+                result:'',
+                url : '',
+                technologyStack : 'Vue3+Pinia+Axios+Uniapp+Vant',
+                technicalPoints :[
+                    '1. 采用列表缓存优化组件渲染，提升页面性能。',
+                    '2. 二次封装符合EasyCom组件规范的scroll-view组件，设置页面安全区域，并实现下拉刷新，上拉分页功能，并收集团队需求进行再次封装。',
+                    '3. 为简化用户注册流程，提供多平台登录策略，实现最佳用户体验。',
+                    '4. 解决使用Uniapp出现的多平台跨端兼容问题。'
+                ]
+            }
+        },
+        {
+            id : 4,
             name : '修仙全靠运气(移动端)',
             img : xiuxianImg,
             profile : '玩家能够随时随地的参与游戏活动。',
@@ -101,29 +120,14 @@ export default {
                 url : '',
                 technologyStack : 'Vue3+Vue-Router+Axios+Vuex+ElementPlus',
                 technicalPoints :[
-                    '1. 项目进行权限拦截，对是否登录进行判断。',
-                    '2. 使用Vuex管理全局状态，支持多账号一键切换与删除。',
-                    '3. 支持用户在不同的世界频道，门票聊天，公屏答题。因为后端不支持socket，项目采用的是定时器轮询机制，间隔发送请求，并对返回数据进行处理。',
-                    '4. 若频道出现违规信息，管理员进行消息撤回，能够自动过滤对违规信息做防窥处理。',
-                    '5. 功能页中，消息框过多消息超出范围，能自动滚动到消息底部。',
-                    '6. 性能优化方面，使用路由懒加载模式，减少首屏加载使用时间。将图片资源压缩等。FCP由2.3s优化至1.81s。'
+                    '1. 网页通过导航守卫进行权限拦截，对是否登录进行判断。',
+                    '2. 用户token失效时，进行无感刷新。并对token失效期间发送的请求进行处理。',
+                    '3. 对数据进行反序列化，并使用Vuex管理全局状态，支持多账号一键切换与删除。',
+                    '4. 因后端暂不支持WebSocket，所以世界聊天采用轮询机制，间隔发送请求，并对返回的数据进行处理。',
+                    '5. 自定义解析规则，实现管理员撤回消息的防窥处理，以及提醒用户看消息等功能。',
+                    '6. 页面性能优化，使用路由懒加载模式，优化回流重绘，图片资源压缩。FCP由2.3s优化至1.81s。'
                 ]
             }
-        },
-        {
-            id : 4,
-            name : '数据监管系统',
-            img : bigScreenImg,
-            profile : '用于销售数据监控',
-            detail:{
-                title:'',
-                profile: '',
-                module : '',
-                result:'',
-                url : '',
-                technologyStack : '',
-                technicalPoints :[]
-            }
-        },
+        }
     ]
 }
