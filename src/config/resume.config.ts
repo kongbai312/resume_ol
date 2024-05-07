@@ -54,7 +54,7 @@ export default {
                 profile: '',
                 module : '',
                 result:'',
-                url : 'http://zby312781556.gitee.io/personal_cicd',
+                url : 'https://kongbai312.github.io/personal_cicd',
                 technologyStack : 'Vue3+TypeScript+Vue-Router+Axios+Element-Plus+MarkDown+Echarts+Pinia+Mockjs',
                 technicalPoints :[
                     '1. 首屏使用live2d，生成2d人物，丰富网页效果。首屏使用live2d，生成2d人物，丰富网页效果。',
