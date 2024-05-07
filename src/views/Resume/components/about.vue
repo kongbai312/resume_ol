@@ -1,5 +1,5 @@
 <template>
-    <section class="boxItem about">
+    <section class="boxItem about" :style="aboutImg">
         <div class="title title-about">
             <span class="narbarItem" @click="goNarbar(4)"><i class="iconfont icon-about"></i>关于</span>
             <div class="narbarBg aboutBg">
@@ -33,6 +33,15 @@
 import { useNarbarClick } from '@/hooks/narbarClick';
 import Star from '@/components/star/star.vue';
 import { useIsMobile, useCopy } from '@/hooks';
+//图片配置对象
+import ImgConfig from '@/config/img.config';
+//关于背景图
+let aboutImg = computed(() => {
+    return {
+        '--bg-img' : `url(${ImgConfig.aboutImg})`
+    }
+})
+
 //导航跳转
 const { goNarbar } = useNarbarClick()
 
@@ -81,9 +90,9 @@ const buttonClick = (type: string) => {
 @import '@/styles/mixins.scss';
 
 //关于背景图
-.about {
-    --bg-img: url(../../../assets/image/bg-about.jpg);
-}
+// .about {
+//     --bg-img: url(../../../assets/image/bg-about.jpg);
+// }
 
 .boxItem {
     @include boxItem;

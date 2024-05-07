@@ -1,5 +1,5 @@
 <template>
-    <section class="boxItem work">
+    <section class="boxItem work" :style="workImg">
         <div class="title title-work">
             <span class="narbarItem" @click="goNarbar(NarbarArr[2].id)">
                 <i :class="`iconfont icon-${ NarbarArr[2].icon}`"></i>{{NarbarArr[2].name}}
@@ -39,6 +39,15 @@ import { useNarbarClick } from '@/hooks/narbarClick';
 import gsap from '@/utils/gsap';
 import ResumeConfig from '@/config/resume.config';
 import NarbarArr from '@/config/narbar.config';
+//图片配置对象
+import ImgConfig from '@/config/img.config';
+//工作经历背景图
+let workImg = computed(() => {
+    return {
+        '--bg-img' : `url(${ImgConfig.workImg})`
+    }
+})
+
 //导航跳转
 const { goNarbar } = useNarbarClick()
 
@@ -89,10 +98,10 @@ onMounted(() => {
 <style lang="scss" scoped>
 @import '@/styles/mixins.scss';
 
-// 工作经历背景图
-.work {
-    --bg-img: url(../../../assets/image/bg-work.jpg);
-}
+// // 工作经历背景图
+// .work {
+//     --bg-img: url(../../../assets/image/bg-work.jpg);
+// }
 
 .boxItem {
     @include boxItem;

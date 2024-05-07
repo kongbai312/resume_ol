@@ -1,5 +1,5 @@
 <template>
-    <section class="boxItem project">
+    <section class="boxItem project" :style="projectImg">
         <div class="title title-project">
             <span class="narbarItem" @click="goNarbar(3)"><i class="iconfont icon-project"></i>项目</span>
             <div class="narbarBg projectBg"></div>
@@ -59,6 +59,15 @@ import { useNarbarClick } from '@/hooks/narbarClick';
 import gsap from '@/utils/gsap';
 import ResumeConfig from '@/config/resume.config';
 import type { ProjectDetailType } from '@/types/project.d.ts';
+//图片配置对象
+import ImgConfig from '@/config/img.config';
+//项目背景图
+let projectImg = computed(() => {
+    return {
+        '--bg-img' : `url(${ImgConfig.projectImg})`
+    }
+})
+
 //控制drawer显示隐藏
 let drawerShow = ref(false)
 
@@ -222,10 +231,10 @@ const { goNarbar } = useNarbarClick()
 <style lang="scss" scoped>
 @import '@/styles/mixins.scss';
 
-// 项目背景图
-.project {
-    --bg-img: url(../../../assets/image/bg-project.jpg);
-}
+// // 项目背景图
+// .project {
+//     --bg-img: url(../../../assets/image/bg-project.jpg);
+// }
 
 .boxItem {
     @include boxItem;

@@ -1,11 +1,11 @@
 <template>
-    <section class="boxItem home">
+    <section class="boxItem home" :style="homeImg">
         <!-- 导航区 -->
         <Narbar></Narbar>
         <div class="content">
             <div class="authorImgBox">
-                <div class="moonImg authorItem"></div>
-                <div class="authorImg authorItem"></div>
+                <div class="moonImg authorItem" :style="moonImg"></div>
+                <div class="authorImg authorItem" :style="authorImg"></div>
                 <div class="authorBg authorItem"></div>
             </div>
             <div class="authorInfo">
@@ -23,6 +23,30 @@
 import ResumeConfig from '@/config/resume.config';
 import gsap from '@/utils/gsap';
 import NarbarArr from '@/config/narbar.config';
+//图片配置对象
+import ImgConfig from '@/config/img.config';
+//作者头像
+let authorImg = computed(() => {
+    let imgObj = {
+        backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, .1), rgba(0, 0, 0, 0.1)),url(${ImgConfig.authorImg})`
+    }
+    return imgObj
+})
+//月亮图片
+let moonImg = computed(() => {
+    let imgObj = {
+        backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0.2)),url(${ImgConfig.moonImg})`
+    }
+    return imgObj
+})
+//主页背景
+let homeImg = computed(() => {
+    let imgObj = {
+        backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, .4), rgba(0, 0, 0, 0.4)),url(${ImgConfig.homeImg})`
+    }
+    return imgObj
+})
+
 //头像动画
 let tl = gsap.timeline({ duration: 3, ease: 'power2.inOut' })
 const authorImgAnimation = () => {

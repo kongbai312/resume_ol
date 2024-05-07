@@ -1,5 +1,5 @@
 <template>
-    <section class="boxItem skill">
+    <section class="boxItem skill" :style="skillImg">
         <div class="title title-skill">
             <span class="narbarItem" @click="goNarbar(NarbarArr[1].id)">
                 <i :class="`iconfont icon-${ NarbarArr[1].icon}`"></i>{{NarbarArr[1].name}}
@@ -25,6 +25,15 @@ import { useNarbarClick } from '@/hooks/narbarClick';
 import gsap from '@/utils/gsap';
 import ResumeConfig from '@/config/resume.config';
 import NarbarArr from '@/config/narbar.config';
+//图片配置对象
+import ImgConfig from '@/config/img.config';
+//专业技能背景图
+let skillImg = computed(() => {
+    return {
+        '--bg-img' : `url(${ImgConfig.skillImg})`
+    }
+})
+
 //导航跳转
 const { goNarbar } = useNarbarClick()
 
@@ -65,10 +74,10 @@ onMounted(() => {
 <style lang="scss" scoped>
 @import '@/styles/mixins.scss';
 
-// 专业技能背景图
-.skill {
-    --bg-img: url(../../../assets/image/bg-skill.jpg);
-}
+// // 专业技能背景图
+// .skill {
+//     --bg-img: url(../../../assets/image/bg-skill.jpg);
+// }
 
 .boxItem {
     @include boxItem;

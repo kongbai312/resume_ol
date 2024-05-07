@@ -1,12 +1,15 @@
-import Company1 from '@/assets/image/company1.jpg';
-//个人博客图片
-import BlogImg from '@/assets/image/blog.png';
-//贸速达图片
-import MaosudaImg from '@/assets/image/maosuda.jpg';
-//修仙全靠运气图片
-import xiuxianImg from '@/assets/image/xiuxian.png';
-//安心送
-import AnxinsongImg from '@/assets/image/anxinsong.png';
+//安能公司
+// import AnnengCompany from '@/assets/image/anneng-company.jpg';
+// //个人博客图片
+// import BlogImg from '@/assets/image/blog.png';
+// //贸速达图片
+// import MaosudaImg from '@/assets/image/maosuda.jpg';
+// //修仙全靠运气图片
+// import xiuxianImg from '@/assets/image/xiuxian.png';
+// //安心送
+// import AnxinsongImg from '@/assets/image/anxinsong.png';
+//图片配置对象
+import ImgConfig from '@/config/img.config';
 
 export default {
     //自己的姓名
@@ -29,7 +32,7 @@ export default {
     works : [
         {
             workTime : '2021/9/23 - 2023/11/30',
-            companyImg : Company1,//没有图片会显示公司的第一个字
+            companyImg : ImgConfig.annengCompanyImg,//没有图片会显示公司的第一个字
             company : '安能贸易有限公司',
             department:'magic建站部',
             worksBox:[
@@ -44,7 +47,7 @@ export default {
         {
             id : 1,
             name : '个人博客',
-            img : BlogImg,
+            img : ImgConfig.blogImg,
             profile : '用于记录学习与生活',
             detail:{
                 title:'个人博客',
@@ -69,7 +72,7 @@ export default {
         {
             id : 2,
             name : '贸速达',
-            img : MaosudaImg,
+            img : ImgConfig.maosudaImg,
             profile : '贸易订单的管理。为客户提供可视化运输状态。',
             detail:{
                 title:'贸速达',
@@ -90,7 +93,7 @@ export default {
         {
             id : 3,
             name : '安心送',
-            img : AnxinsongImg,
+            img : ImgConfig.anxinsongImg,
             profile : '为客户提供系下单与订单查询',
             detail:{
                 title:'安心送',
@@ -110,7 +113,7 @@ export default {
         {
             id : 4,
             name : '修仙全靠运气(移动端)',
-            img : xiuxianImg,
+            img : ImgConfig.xiuxianImg,
             profile : '玩家能够随时随地的参与游戏活动。',
             detail:{
                 title:'修仙全靠运气（移动端）',
