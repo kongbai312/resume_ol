@@ -10,7 +10,9 @@
             <div class="aboutInfoBox">
                 <div class="infoTitleBox">
                     <div class="infoTitleBox_title">感谢您的莅临</div>
-                    <div class="infoTitleBox_prompt">如果合适，可以请您在下方联系我</div>
+                    <div class="infoTitleBox_prompt">如果合您心意</div>
+                    <div class="infoTitleBox_prompt">可以请您在下方或者BOSS上与我联系</div>
+                    <div class="infoTitleBox_prompt">非常期待您的回复！</div>
                 </div>
                 <div class="buttonBox">
                     <span class="buttonItem" @click="buttonClick('qq')"><i class="iconfont icon-qq"></i>QQ</span>
@@ -38,7 +40,7 @@ import ImgConfig from '@/config/img.config';
 //关于背景图
 let aboutImg = computed(() => {
     return {
-        '--bg-img' : `url(${ImgConfig.aboutImg})`
+        '--bg-img': `url(${ImgConfig.aboutImg})`
     }
 })
 
@@ -76,7 +78,7 @@ const buttonClick = (type: string) => {
             // 使用邮件的URL Scheme来发送邮件
             window.location.href = `mailto:zbywork312@163.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         }
-        copyInfo('zbywork312@163.com','已复制邮箱到剪贴板，手机用户将会前往app')
+        copyInfo('zbywork312@163.com', '已复制邮箱到剪贴板，手机用户将会前往app')
     }
     else if (type === 'phone') {
         // 使用电话的URL Scheme来拨打电话
@@ -150,6 +152,9 @@ const buttonClick = (type: string) => {
                     color: rgba(255, 255, 255, 0.5);
                     font-size: var(--about-prompt-font-size);
                 }
+                .infoTitleBox_prompt:nth-of-type(2),.infoTitleBox_prompt:nth-of-type(3){
+                    margin-bottom: 20px;
+                }
             }
 
             //按钮
@@ -209,6 +214,7 @@ const buttonClick = (type: string) => {
 
 @media (max-width: 996px) {
     .boxItem {
+
         // 内容
         .content {
 
