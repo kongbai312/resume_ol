@@ -15,9 +15,14 @@
                     <div class="infoTitleBox_prompt">非常期待您的回复！</div>
                 </div>
                 <div class="buttonBox">
-                    <span class="buttonItem" @click="buttonClick('qq')"><i class="iconfont icon-qq"></i>QQ</span>
+                    <!-- <span class="buttonItem" @click="buttonClick('qq')"><i
+                            class="iconfont icon-qq"></i>QQ</span>
                     <span class="buttonItem" @click="buttonClick('wechat')"><i
-                            class="iconfont icon-wechat"></i>Wechat</span>
+                            class="iconfont icon-wechat"></i>Wechat</span> -->
+                    <span class="buttonItem" @click="buttonClick('github')"><i
+                            class="iconfont icon-github"></i>Github</span>
+                    <span class="buttonItem" @click="buttonClick('blog')"><i
+                            class="iconfont icon-blog"></i>Blog</span>
                     <span class="buttonItem" @click="buttonClick('email')"><i
                             class="iconfont icon-email"></i>Email</span>
                     <span class="buttonItem" @click="buttonClick('phone')"><i
@@ -37,6 +42,8 @@ import Star from '@/components/star/star.vue';
 import { useIsMobile, useCopy } from '@/hooks';
 //图片配置对象
 import ImgConfig from '@/config/img.config';
+//基本信息对象
+import ResumeConfig from '@/config/resume.config';
 //关于背景图
 let aboutImg = computed(() => {
     return {
@@ -53,19 +60,26 @@ const { isMobile } = useIsMobile()
 //引入复制
 const { copyInfo } = useCopy()
 //点击按钮
-const buttonClick = (type: string) => {
-    if (type === 'qq') {
-        if (isMobile.value) {
-            copyInfo('312781556')
-            // 使用QQ的URL Scheme来打开微信，并跳转到添加好友页面
-            window.location.href = `mqqapi://card/show_pslcard?uin=312781556`
-        }
-        else {
-            copyInfo('312781556', '已复制QQ到剪贴板')
-        }
+const buttonClick = async(type: string) => {
+    // if (type === 'qq') {
+    //     if (isMobile.value) {
+    //         copyInfo('312781556')
+    //         // 使用QQ的URL Scheme来打开微信，并跳转到添加好友页面
+    //         window.location.href = `mqqapi://card/show_pslcard?uin=312781556`
+    //     }
+    //     else {
+    //         copyInfo('312781556', '已复制QQ到剪贴板')
+    //     }
+    // }
+    // else if (type === 'wechat') {
+    //     copyInfo('Zhby312', '已复制微信到剪贴板')
+    // }
+    if(type === 'github'){
+        window.open(ResumeConfig.github)
     }
-    else if (type === 'wechat') {
-        copyInfo('Zhby312', '已复制微信到剪贴板')
+    else if(type === 'blog'){
+        await alert("博客部署在github可能会有打不开的情况")
+        await window.open(ResumeConfig.blog)
     }
     else if (type === 'email') {
         if (isMobile.value) {
@@ -152,7 +166,9 @@ const buttonClick = (type: string) => {
                     color: rgba(255, 255, 255, 0.5);
                     font-size: var(--about-prompt-font-size);
                 }
-                .infoTitleBox_prompt:nth-of-type(2),.infoTitleBox_prompt:nth-of-type(3){
+
+                .infoTitleBox_prompt:nth-of-type(2),
+                .infoTitleBox_prompt:nth-of-type(3) {
                     margin-bottom: 20px;
                 }
             }

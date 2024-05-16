@@ -1,6 +1,6 @@
 @font-face {
   font-family: "iconfont"; /* Project id 4495186 */
-  src: url('./iconfont.woff2') format('woff2');
+  src: url('iconfont.woff2?t=1715855586787') format('woff2');
 }
 
 .iconfont {
@@ -9,6 +9,14 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-github:before {
+  content: "\e64c";
+}
+
+.icon-blog:before {
+  content: "\e60b";
 }
 
 .icon-wechat:before {
