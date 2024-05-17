@@ -78,7 +78,7 @@ const buttonClick = async(type: string) => {
         window.open(ResumeConfig.github)
     }
     else if(type === 'blog'){
-        await alert("博客部署在github可能会有打不开的情况")
+        await alert("博客部署在github可会有网络不好的情况，请见谅（已做CDN处理）")
         await window.open(ResumeConfig.blog)
     }
     else if (type === 'email') {

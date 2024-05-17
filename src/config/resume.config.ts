@@ -21,7 +21,7 @@ export default {
     //github地址
     github: 'https://github.com/kongbai312',
     //博客
-    blog: 'https://kongbai312.github.io/personal_cicd',
+    blog: 'https://blog.swhite.work',
     //个人技能
     skills : [
         '熟练使用 Vue2 、Vue3、Vue-Router、Vuex、TypeScript，Pinia 等前端技术。并了解Vue实现原理',
@@ -58,7 +58,7 @@ export default {
                 profile: '',
                 module : '',
                 result:'',
-                url : 'https://kongbai312.github.io/personal_cicd',
+                url : 'https://blog.swhite.work',
                 technologyStack : 'Vue3+TypeScript+Vue-Router+Axios+Element-Plus+MarkDown+Echarts+Pinia+Mockjs',
                 technicalPoints :[
                     '1. 首屏使用live2d，生成2d人物，丰富网页效果。首屏使用live2d，生成2d人物，丰富网页效果。',
