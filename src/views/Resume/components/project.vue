@@ -351,4 +351,14 @@ const { goNarbar } = useNarbarClick()
         }
     }
 }
+
+@media (max-width:996px) {
+    .infoItemContent_title::before {
+      transform: translate(0) !important;
+    }
+    .infoItemContent_profile {
+      opacity: 1 !important;
+      transform: translate(0)  !important;
+    }
+}
 </style>
