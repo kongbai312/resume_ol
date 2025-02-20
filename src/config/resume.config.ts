@@ -25,7 +25,7 @@ export default {
     //个人技能
     skills : [
         '熟练使用 Vue2 、Vue3、Vue-Router、Vuex、TypeScript，Pinia 等前端技术。并了解Vue实现原理',
-        '熟练使用 Element-UI、Vant、Bootstrap 等 UI 框架',
+        '熟练使用 Element-UI、Vant、Bootstrap 等 UI 框架，具备组件二次开发能力',
         '熟练使用HTML5、CSS3、JavaScript进行快速独立完成PC端和移动端页面架构和响应式布局',
         '熟练使用Less、Sass等CSS预处理语言，提升代码灵活性与开发效率',
         '熟练使用Uni-app框架进行小程序开发',
@@ -35,7 +35,8 @@ export default {
     //工作经历
     works : [
         {
-            workTime : '2021/9/23 - 2024/2/2',
+            //workTime : '2021/9/23 - 2024/2/2',
+            workTime : '2022/6/23 - 2024/12/2',
             companyImg : ImgConfig.annengCompanyImg,//没有图片会显示公司的第一个字
             company : '安能贸易有限公司',
             department:'magic建站部',
@@ -87,9 +88,9 @@ export default {
                 technologyStack : 'Vue3+Vue-Router+Axios+Pinia+Websocket+TypeScript',
                 technicalPoints :[
                     '1. 开发一个高复用的消息组件，该组件利用虚拟DOM技术进行直接渲染，通过Vue的实例将显示消息的方法提供给后代组件。同时，对该组件进行全面的测试以确保其稳定性和可靠性。',
-                    '2. 基于高德地图提供的资源包，注册AMap实例，绘制物流订单路线图，实现物流可视化。',
-                    '3. 基于 WebSocket 技术和 socket.io-client 插件，实现客户与客服即时聊天。',
-                    '4. 基于axios 封装全局请求方法，简化传参逻辑，处理业务失败等问题。',
+                    '2. 集成高德地图SDK构建AMap实例集群，实现物流订单路线绘制与物流节点状态映射。',
+                    '3. 基于 WebSocket 技术和 socket.io-client 插件，实现客户与客服之间的即时通讯。',
+                    '4. 基于axios 封装全局请求方法，简化传参逻辑，统一处理401/503等异常状态等问题。',
                     '5. 解决表单窗口意外关闭数据丢失问题，重新打开窗口能够进行数据回弹，提升用户体验。',
                 ]
             }
@@ -108,7 +109,7 @@ export default {
                 technologyStack : 'Vue3+Pinia+Axios+Uniapp+Vant',
                 technicalPoints :[
                     '1. 采用列表缓存优化组件渲染，提升页面性能。',
-                    '2. 收集团队需求，二次封装符合EasyCom组件规范的scroll-view组件，设置页面安全区域，并实现下拉刷新，上拉分页功能，并编写组件使用文档',
+                    '2. 收集团队需求，二次封装符合EasyCom组件规范的scroll-view组件，设置页面安全区域，并实现下拉刷新，上拉分页功能，并编写组件使用文档，支持多个业务模块复用。',
                     '3. 为简化用户注册流程，提供多平台登录策略，实现最佳用户体验。',
                     '4. 解决使用Uniapp出现的多平台跨端兼容问题。'
                 ]
