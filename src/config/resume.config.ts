@@ -53,7 +53,7 @@ export default {
             id : 1,
             name : '个人博客',
             img : ImgConfig.blogImg,
-            profile : '用于记录学习与生活',
+            profile : '用于记录学习与生活(点击查看详情)',
             detail:{
                 title:'个人博客',
                 profile: '',
@@ -78,7 +78,7 @@ export default {
             id : 2,
             name : '贸速达',
             img : ImgConfig.maosudaImg,
-            profile : '贸易订单的管理。为客户提供可视化运输状态。',
+            profile : '贸易订单的管理。为客户提供可视化运输状态。(点击查看详情)',
             detail:{
                 title:'贸速达',
                 profile: '该项目能够进行贸易订单的管理。客户能在该系统上进行订单查询与咨询。并为客户提供可视化运输状态',
