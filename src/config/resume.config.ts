@@ -99,7 +99,7 @@ export default {
             id : 3,
             name : '安心送',
             img : ImgConfig.anxinsongImg,
-            profile : '为客户提供系下单与订单查询',
+            profile : '为客户提供系下单与订单查询(点击查看详情)',
             detail:{
                 title:'安心送',
                 profile: '该项目提供商品的送达服务。并为客户提供系下单与订单查询',
@@ -119,7 +119,7 @@ export default {
             id : 4,
             name : '修仙全靠运气(移动端)',
             img : ImgConfig.xiuxianImg,
-            profile : '玩家能够随时随地的参与游戏活动。',
+            profile : '玩家能够随时随地的参与游戏活动。(点击查看详情)',
             detail:{
                 title:'修仙全靠运气（移动端）',
                 profile: '为了响应用户需求，使得用户能够随时随地的参与游戏活动，获取奖励，挂机历练升级。',
