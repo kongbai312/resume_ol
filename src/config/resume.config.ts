@@ -18,6 +18,8 @@ export default {
     workName : '2年前端',
     //学历
     degree : '本科',
+    //专业
+    professional:'信息与计算科学',
     //github地址
     github: 'https://github.com/kongbai312',
     //博客

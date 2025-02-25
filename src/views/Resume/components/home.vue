@@ -11,7 +11,7 @@
             <div class="authorInfo">
                 <span class="name">{{ ResumeConfig.name }}</span>
                 <span class="info">{{ ResumeConfig.workName }} - {{ ResumeConfig.degree}}</span>
-                <span class="info professional">信息与计算科学</span>
+                <span class="info professional">{{ResumeConfig.professional}}</span>
             </div>
         </div>
         <!-- 箭头 --><!-- 传入当前导航的下一个id -->
