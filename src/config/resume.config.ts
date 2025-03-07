@@ -37,8 +37,7 @@ export default {
     //工作经历
     works : [
         {
-            //workTime : '2021/9/23 - 2024/2/2',
-            workTime : '2022/9/23 - 2024/12/2',
+            workTime : '2022/9/23 - 2024/12/23',
             companyImg : ImgConfig.annengCompanyImg,//没有图片会显示公司的第一个字
             company : '安能贸易有限公司',
             department:'magic建站部',
