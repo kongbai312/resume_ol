@@ -229,7 +229,7 @@ const { goNarbar } = useNarbarClick()
 </script>
 
 <style lang="scss" scoped>
-@import '@/styles/mixins.scss';
+@use '@/styles/mixins.scss' as *;
 
 // // 项目背景图
 // .project {

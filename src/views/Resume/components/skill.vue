@@ -72,7 +72,7 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
-@import '@/styles/mixins.scss';
+@use '@/styles/mixins.scss' as *;
 
 // // 专业技能背景图
 // .skill {
@@ -111,6 +111,7 @@ onMounted(() => {
     // 内容
     .content {
         @include content;
+        padding:0 40px;
 
         //专业技能信息
         .skillInfoBox {

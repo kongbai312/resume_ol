@@ -15,7 +15,7 @@ export default {
     //自己的姓名
     name : '朱博艺',
     //从事工作
-    workName : '2年前端',
+    workName : '4年前端',
     //学历
     degree : '本科',
     //专业
@@ -32,7 +32,7 @@ export default {
         '熟练使用Less、Sass等CSS预处理语言，提升代码灵活性与开发效率',
         '熟练使用Uni-app框架进行小程序开发',
         '了解前端工程化开发，以及Webpack、Vite配置与性能优化',
-        '了解使用 Echarts，高德地图等工具进行可视化渲染',
+        '了解使用 Echarts、Mars3D/Cesium、高德地图AMap SDK、Mapbox GL，Three.js等工具进行图形可视化渲染',
     ],
     //工作经历
     works : [
@@ -46,22 +46,33 @@ export default {
                 '2. 根据设计稿，完成页面开发，并保证一定的响应式与兼容性',
                 '3. 参与项目优化，缩减页面体积、加快页面元素的加载速度、优化用户体验。'
             ]
+        },
+        {
+            workTime : '2025/3/10 - 至今',
+            companyImg : ImgConfig.annengCompanyImg,//没有图片会显示公司的第一个字
+            company : '思特顺科技有限公司',
+            department:'项目服务部',
+            worksBox:[
+                '1. 负责交通/GIS 类项目前端开发，涵盖 B 端管理台、可视化大屏、企业微信/移动端 H5，技术栈以 Vue 3 + TypeScript + Vite 为主。',
+                '2. 负责机场离港平台、地铁线网态势与客流预测、皇岗口岸大屏等核心业务模块，熟悉地图/拓扑/ECharts 可视化',
+                '3. 参与项目 0—1 搭建、Docker 部署及二期迭代，具备多端协作交付与线上问题排查能力'
+            ]
         }
     ] ,
     //项目经历
     projects:[
         {
             id : 1,
-            name : '个人博客',
+            name : '深圳机场综合交通全域一张图（兴智杯全国一等奖项目）',
             img : ImgConfig.blogImg,
-            profile : '用于记录学习与生活(点击查看详情)',
+            profile : '面向深圳宝安国际机场的综合交通数字化平台，覆盖「人、车、路、场」全域交通态势感知与协同调度。项目涵盖 B 端管理后台与数据可视化大屏双端，融合 AI 算法能力，实现机场客流、车辆运力、道路运行、场站态势等多维数据的一体化展示与辅助决策。一期完成后，基于原有架构持续进行二期功能扩展与业务补充开发。该项目荣获第二届「兴智杯」全国人工智能创新应用大赛全国总决赛全国一等奖。',
             detail:{
                 title:'个人博客',
                 profile: '',
                 module : '',
                 result:'',
-                url : 'https://blog.swhite.work',
-                technologyStack : 'Vue3+TypeScript+Vue-Router+Axios+Element-Plus+MarkDown+Echarts+Pinia+Mockjs',
+                url : '',
+                technologyStack : 'Vue3 + TypeScript + Vite + Pinia + Element Plus + Vant + ECharts + Mars3D / Cesium + Axios + Less',
                 technicalPoints :[
                     '1. 首屏使用live2d，生成2d人物，丰富网页效果。首屏使用live2d，生成2d人物，丰富网页效果。',
                     '2. 网页整体设计了两种主题，结合VueUse函数与CSS变量，实现网站主题的切换。并进行了移动端适配，一套代码，两端展示。',
@@ -116,27 +127,5 @@ export default {
                 ]
             }
         },
-        {
-            id : 4,
-            name : '修仙全靠运气(移动端)',
-            img : ImgConfig.xiuxianImg,
-            profile : '玩家能够随时随地的参与游戏活动。(点击查看详情)',
-            detail:{
-                title:'修仙全靠运气（移动端）',
-                profile: '为了响应用户需求，使得用户能够随时随地的参与游戏活动，获取奖励，挂机历练升级。',
-                module : '负责整个项目从0-1搭建编写打包',
-                result:'项目上线后，方便了玩家日常体验，用户量稳定升高，日在线量千人以上。',
-                url : '',
-                technologyStack : 'Vue3+Vue-Router+Axios+Vuex+ElementPlus',
-                technicalPoints :[
-                    '1. 基于Vue Router设计路由鉴权系统，通过导航守卫拦截非法访问，实现自动化重定向机制。',
-                    '2. 实现Token无感刷新，使成功率99.8%，并进行错误恢复队列的设计。',
-                    '3. 对数据进行反序列化，并使用Vuex管理全局状态，实现多账号数据隔离与无缝切换。',
-                    '4. 因后端暂不支持WebSocket，所以世界聊天采用轮询机制，间隔发送请求，并设计优化轮询策略，减少约20.8%的服务器负载。',
-                    '5. 自定义解析规则，实现管理员撤回消息的防窥处理，以及用户消息提醒等功能。',
-                    '6. 页面性能优化，使用路由懒加载模式，优化回流重绘，图片资源压缩。FCP由2.3s优化至1.81s。'
-                ]
-            }
-        }
     ]
 }

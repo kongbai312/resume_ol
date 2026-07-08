@@ -31,6 +31,13 @@ export default ({ mode }: { mode: string }) => {
         resolvers: [ElementPlusResolver()]
       })
     ],
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: 'modern-compiler'
+        }
+      }
+    },
     //github部署
     base: env.MODE === 'production' ? '/resume_ol/' : './',
     resolve: {

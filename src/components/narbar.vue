@@ -15,7 +15,7 @@ const { goNarbar } = useNarbarClick()
 </script>
 
 <style lang="scss" scoped>
-@import '@/styles/mixins.scss';
+@use '@/styles/mixins.scss' as *;
 .narbar_container {
   background-color: transparent;
   height: var(--narHeight);

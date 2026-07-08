@@ -103,7 +103,7 @@ const buttonClick = async(type: string) => {
 </script>
 
 <style lang="scss" scoped>
-@import '@/styles/mixins.scss';
+@use '@/styles/mixins.scss' as *;
 
 //关于背景图
 // .about {
