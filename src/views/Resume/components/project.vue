@@ -111,10 +111,11 @@ const cardViewFn = () => {
     const sections = document.querySelectorAll(".section-card-view");
     // 获取所有的Card
     const cards = document.querySelectorAll(".section-card");
+    if (cards.length === 0) return
     //卡片的宽度
     const cardWidth = cards[0].clientWidth;
     // 获取卡片间的margin-left
-    const cardMargin = Number(window.getComputedStyle(cards[1]).getPropertyValue("margin-left").slice(0, -2));
+    const cardMargin = cards[1] ? Number(window.getComputedStyle(cards[1]).getPropertyValue("margin-left").slice(0, -2)) : 0;
     //卡片的数量
     const cardsNumber = cards.length;
     //获取当前屏幕宽度

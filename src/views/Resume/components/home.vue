@@ -12,6 +12,9 @@
                 <span class="name">{{ ResumeConfig.name }}</span>
                 <span class="info">{{ ResumeConfig.workName }} - {{ ResumeConfig.degree}}</span>
                 <span class="info professional">{{ResumeConfig.professional}}</span>
+                <div class="advantageBox">
+                    <span class="advantageItem" v-for="item in ResumeConfig.advantages" :key="item">{{ item }}</span>
+                </div>
             </div>
         </div>
         <!-- 箭头 --><!-- 传入当前导航的下一个id -->
@@ -65,6 +68,7 @@ const authorImgAnimation = () => {
     })
     tl.to(".authorInfo .name", { opacity: 1 , duration: 1})
     tl.to(".authorInfo .info", { opacity: 1 , duration: 1})
+    tl.to(".advantageItem", { opacity: 1, y: 0, stagger: 0.08, duration: 0.6 })
 }
 onMounted(() => {
     authorImgAnimation()
@@ -150,6 +154,28 @@ onMounted(() => {
             .professional{
                 font-size: var(--home-professional-font-size);
             }
+            .advantageBox {
+                box-sizing: border-box;
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 10px;
+                max-width: 760px;
+                margin-top: 20px;
+                padding: 0 20px;
+            }
+            .advantageItem {
+                box-sizing: border-box;
+                padding: 8px 14px;
+                border: 1px solid rgba(255, 255, 255, 0.45);
+                border-radius: 999px;
+                background: rgba(0, 0, 0, 0.25);
+                color: rgba(255, 255, 255, 0.86);
+                font-size: var(--home-professional-font-size);
+                backdrop-filter: blur(8px);
+                opacity: 0;
+                transform: translateY(10px);
+            }
         }
     }
 
@@ -162,6 +188,15 @@ onMounted(() => {
                 margin-top: 60px;
                 .info{
                     margin-top: 5px;
+                }
+                .advantageBox {
+                    gap: 6px;
+                    margin-top: 12px;
+                    max-width: 90vw;
+                    padding: 0 8px;
+                }
+                .advantageItem {
+                    padding: 6px 9px;
                 }
             }
         }

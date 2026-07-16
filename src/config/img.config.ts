@@ -10,18 +10,14 @@ import SkillImg from '@/assets/image/bg-skill.jpg';
 import WorkImg from '@/assets/image/bg-work.jpg';
 //project背景图
 import ProjectImg from '@/assets/image/bg-project.jpg';
+import ProjectDefaultImg from '@/assets/image/project_default.png';
 //about背景图
 import AboutImg from '@/assets/image/bg-about.jpg';
 //个人博客图片
 import BlogImg from '@/assets/image/blog.png';
-//贸速达
-import MaosudaImg from '@/assets/image/maosuda.jpg';
-//安心送
-import AnxinsongImg from '@/assets/image/anxinsong.png';
-//修仙全靠运气图片
-import XiuxianImg from '@/assets/image/xiuxian.png';
 //安能公司
 import AnnengCompany from '@/assets/image/anneng-company.jpg';
+import SzAirportBigScreenImg from '@/assets/image/sz-airport-big-screen.png';
 
 //是否使用图床资源
 const isUseImgBed = true
@@ -46,24 +42,17 @@ const imgObj = {
     //project背景图
     projectImgBed : 'https://pic.imgdb.cn/item/6639cb7a0ea9cb14032e5855.jpg',
     projectImgLocal : ProjectImg,
+    projectDefaultImgLocal: ProjectDefaultImg,
     //about背景图
     aboutImgBed : 'https://pic.imgdb.cn/item/6639cb690ea9cb14032e409a.jpg',
     aboutImgLocal : AboutImg,
     //个人博客
     blogImgBed : 'https://pic.imgdb.cn/item/6639cb7b0ea9cb14032e5942.png',
     blogImgLocal : BlogImg,
-    //贸速达
-    maosudaImgBed : 'https://pic.imgdb.cn/item/6639cb860ea9cb14032e6a3a.jpg',
-    maosudaImgLocal : MaosudaImg,
-    //安心送
-    anxinsongImgBed : 'https://pic.imgdb.cn/item/6639cb200ea9cb14032dd21a.png',
-    anxinsongImgLocal : AnxinsongImg,
-    //修仙全靠运气
-    xiuxianImgBed : 'https://pic.imgdb.cn/item/6639cb860ea9cb14032e6a89.png',
-    xiuxianImgLocal : XiuxianImg,
     //安能贸易公司
     annengCompanyImgBed : 'https://pic.imgdb.cn/item/6639cb7b0ea9cb14032e5998.jpg',
     annengCompanyImgLocal : AnnengCompany,
+    szAirportBigScreenImgLocal: SzAirportBigScreenImg,
 }
 
 //是否使用图床资源
@@ -75,10 +64,9 @@ export default {
     skillImg : isUseImgBed ? imgObj.skillImgBed : imgObj.skillImgLocal,
     workImg : isUseImgBed ? imgObj.workImgBed : imgObj.workImgLocal,
     projectImg : isUseImgBed ? imgObj.projectImgBed : imgObj.projectImgLocal,
+    projectDefaultImg: imgObj.projectDefaultImgLocal,
     aboutImg : isUseImgBed ? imgObj.aboutImgBed : imgObj.aboutImgLocal,
     blogImg: isUseImgBed ? imgObj.blogImgBed : imgObj.blogImgLocal,
-    maosudaImg: isUseImgBed ? imgObj.maosudaImgBed : imgObj.maosudaImgLocal,
-    anxinsongImg: isUseImgBed ? imgObj.anxinsongImgBed : imgObj.anxinsongImgLocal,
-    xiuxianImg: isUseImgBed ? imgObj.xiuxianImgBed : imgObj.xiuxianImgLocal,
     annengCompanyImg: isUseImgBed ? imgObj.annengCompanyImgBed : imgObj.annengCompanyImgLocal,
+    szAirportBigScreenImg: imgObj.szAirportBigScreenImgLocal,
 }
